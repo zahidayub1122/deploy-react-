@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="Jquery.JS.txt" type= "text/javascript"></script>
+  
+  <script>
+     $(document).ready(function(){
+       $("#btn").click (function(){
+          
+         var a = $("<select>")
+          var b = $("<option>").attr("value","1").text("Lahre")
+          a.append(b)
+          var c = $("<option>").attr("value","2")
+          a.append(c)
+          var dd = $("#mydiv")
+          dd.append(a)
+
+       })
+
+     })
+
+ </script>
+
+  <body onload=";">
+
+    <div id="mydiv"></div>
+
+   Number1:<input type = "number" id="t1"><br>
+   Numerb2: <input type="number" id="t2"><br>
+   Result :<input type="number" id="t3"><br>
+    <input type="submit" name="" value="add" id="btn">
+    <input type="submit" name="" value="print" id="btn2">
+    <p id = "pract"></p>
+  </body>
+
+</html>

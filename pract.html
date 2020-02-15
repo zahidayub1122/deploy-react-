@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="ht">
+  <head>
+    <script src="Js/angular.min.js"></script> 
+    <script src="Js/Custom.js"></script>
+    <!-- Issue was in the Custom js file extentshion and Controlloer name Because i was using the wrong controller name -->
+    <style>
+      .photo {
+        height: 600px;
+        width:900px;
+        background-repeat:no-repeat;
+        background-image: url("image/{{color}}.png");
+      }
+      body{
+        /* background-color: yellow; */
+        /* background-color :{{color}}; */
+        background-color:{{chooseColor}}
+      }
+      p{
+        font-size:{{color}}
+      }
+
+    </style>
+   </head>
+  <body>
+    <h1>Welcome To Angular Training</h1>
+    <!-- just for data binding practice in input field and in body and pargrahp etc  -->
+    <input type="text" ng-model="color">
+   <p>How are you boss</p>
+2-
+<hr>
+  <!-- Data binding example for slecte field  -->
+
+  <select ng-model ="chooseColor">
+    <option>Red</option>
+    <option>Yellow</option>
+    <option>Orange</option>
+  </select>
+<hr>
+  <!-- Create varibales and print data in those variables -->
+  <div ng-init = "Name = 'PUCIT'; Roll = '125'; age = '25'"> 
+    Name is : {{Name +" "+ Roll+" " + age}}
+  </div>
+<hr>
+
+  <!-- Create an Array and store element and print elemet fromt he Array -->
+  <div ng-init ="arr =['pucit','lahore','Pakista']">
+     <p ng-repeat = "value in arr">{{value}}</p>
+  </div>
+<hr>
+  <!-- Controller Practice  -->
+  <!-- use of $Scope variable via Controller   -->
+  <!-- use of filters as well  -->
+  <div ng-controller = "mycontroler">
+    Name :<input type="text" ng-model = "Name">
+    Roll :<input type="text" ng-model = "Roll">
+    City :<input type="text" ng-model = "City">
+    <br>
+    Name is : {{Name | lowercase}}
+    <br>
+    Roll is : {{City | currency}}
+    <br>
+    City is : {{Roll}}
+    <br>
+    Calling Function using Controller : {{detail()}}
+    <!-- if we use without small parethesist then there will be funciton will NOT be called
+    i.e detail  , always use this synteax detail() -->
+
+    <ol>
+      <li ng-repeat = "ss in arr">{{ss.name + ss.city}}</li>
+    </ol>
+    <!-- Facing Errror in this code  -->
+    <!-- Because i was writing this code outside the scope of Controller div -->
+     <!-- jab sahi tarah se output nahi arahi to phr Scope ka issu bhi ho sakta ha , carefull -->
+<hr>
+
+     <!-- Sorting with Filters in Arrays etc -->
+     <ul>
+       <li ng-repeat ="ps in colors | orderBy : ps">{{ps}}</li>
+     </ul>
+     
+     <!-- click Event Handler Practice -->
+       
+        <!-- {{Message is : + Eventmessage}} 
+        = BIGGEST  mistake ,
+        is ki waja se pora ka pora Angualr Code nahi chala , poray code ka result zero
+        Issu sirf only Quotion ka tha - be carefull  -->
+
+        {{"Event Handler Message is :"+ Eventmessage}}
+       <hr>
+      <button ng-click = "EventHandler()">Click Me</button>
+
+      <hr>
+      <!-- Use of if Else Statement in Angular  -->
+      {{"Use of if Else :"+c}}
+      <hr>
+      <!-- end of controller dive  -->
+  </div>
+
+
+  <!-- Final Demo of the Series  --> 
+   <!-- issue ye tha k ma seray code ko controlloer ki dive main likh raha tha
+   so scope ka issue araha tha - controller main nahi likhna tha code ko -->
+  <div class="photo">
+    <!-- is dive main images Render hon gi  -->
+  </div>
+   R: <input type="radio" ng-model = "color" value="red"><br>
+   Y: <input type="radio" ng-model = "color" value="yellow"><br>
+   B: <input type="radio" ng-model = "color" value="blue"><br>
+   B: <input type="radio" ng-model = "color" value="black"><br>  
+  </body>
+</html>
