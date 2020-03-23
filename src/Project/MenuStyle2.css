@@ -1,0 +1,23 @@
+*{margin: 0; padding: 0;} 
+.MenuStyle2 {
+    height: 100px;
+    background: #666666;
+    color:white;
+}
+
+.MenuStyle2 ul{
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.MenuStyle2 ul li {
+    list-style: none;
+    text-transform: uppercase;
+    color: white;
+}
+.logo{
+    height: 100px;
+    background-color: forestgreen;
+  }
+   

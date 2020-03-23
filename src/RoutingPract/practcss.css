@@ -1,0 +1,13 @@
+.bgg {
+    color:yellow;
+  }
+  
+  .zahid {
+    color: hotpink;
+  }
+
+  @media only screen and (max-width: 320px) {
+    .bgg{
+      color: red;
+    }
+  }
